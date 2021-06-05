@@ -70,4 +70,23 @@ public class TalkingClock {
             if(beep) Toolkit.getDefaultToolkit().beep();
         }
     }
+
+    /*
+    * 匿名内部类
+    * 将局部内部类使用在深入一步。假如只创建这个类的一个对象，就不必命名了。
+    * 构造器的名字必须与类名相同，而匿名内部类没有类名，所以，匿名内部类不能有构造器。
+    *
+    * */
+    public void start4(int interval, boolean beep){
+        /*
+        * 构造一个继承ActionListener接口的内部类，这个就是匿名内部类的超类，就是要扩展它
+        * */
+        ActionListener listener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("At the tone,the time is" + new Date());
+                if(beep) Toolkit.getDefaultToolkit().beep();
+            }
+        };
+    }
 }
